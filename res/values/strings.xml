@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MainActivity!</string>
+    <string name="hello">Frequency Calculator</string>
     <string name="app_name">OscilloCalc</string>
-
+	<string-array name="freq_units_array">
+		<item>Hz</item>
+		<item>kHz</item>
+		<item>MHz</item>
+		<item>GHz</item>
+	</string-array>
+	<string-array name="time_units_array">
+		<item>S</item>
+		<item>mS</item>
+		<item>uS</item>
+		<item>nS</item>
+	</string-array>
+	<string-array name="div_units_array">
+		<item>Div</item>
+	</string-array>
 </resources>
