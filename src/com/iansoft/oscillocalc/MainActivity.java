@@ -3,9 +3,11 @@ package com.iansoft.oscillocalc;
 import android.app.*;
 import android.os.*;
 import android.view.*;
+import android.view.View;
 import android.widget.*;
 import android.view.View.*;
 import android.text.*;
+import android.content.Intent;
 
 public class MainActivity extends Activity
 {
@@ -67,7 +69,13 @@ public class MainActivity extends Activity
 					//setContentView(R.layout.main);
 				}
 				if (funct_spinner2.getSelectedItem().equals("Voltage Calculator")) {
-					setContentView(R.layout.freqcalc);
+				//	sendMessage();
+					Intent intent = new Intent(MainActivity.this, VoltageActivity.class);
+					//EditText editText = (EditText) findViewById(R.id.edit_message);
+					//String message = editText.getText().toString();
+					//intent.putExtra(EXTRA_MESSAGE, message);
+					startActivity(intent);
+					funct_spinner2.setSelection(0);
 				}
 			}
 			public void onNothingSelected(AdapterView<?> adapterView) {
@@ -84,36 +92,7 @@ public class MainActivity extends Activity
 		// Apply the adapter to the spinner
 		funct_spinner.setAdapter(funcadapter);
 //App Function Spinner End	
-		
-// App Function Spinner Begin		
-				Spinner func_funct_spinner = (Spinner) findViewById(R.id.freq_func_spinner);
-				func_funct_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-					public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-						Spinner funct_spinner2 = (Spinner) findViewById(R.id.func_spinner);
-						
-						if (funct_spinner2.getSelectedItem().equals("Frequency Calculator")) {
-							setContentView(R.layout.main);
-						}
-						if (funct_spinner2.getSelectedItem().equals("Voltage Calculator")) {
-							//setContentView(R.layout.freqcalc);
-						}
-					}
-					public void onNothingSelected(AdapterView<?> adapterView) {
-
-					}
-				});
-				// Create an ArrayAdapter using the string array and a default spinner layout 
-				ArrayAdapter<CharSequence> func_funcadapter = ArrayAdapter.createFromResource(
-					this, R.array.app_functions,
-					android.R.layout.simple_spinner_item
-				); 
-				// Specify the layout to use when the list of choices appears
-				func_funcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-				// Apply the adapter to the spinner
-				func_funct_spinner.setAdapter(funcadapter);
-//App Function Spinner End	
-		
-		
+	
 //Div Spinner Start		
 		Spinner div_spinner = (Spinner) findViewById(R.id.divspinner); 
 	
@@ -176,6 +155,7 @@ public class MainActivity extends Activity
 	}
 	
 	
+
 	public void freq_text_changed() {
 		EditText freq_output = (EditText) findViewById(R.id.freq_val);
 		EditText div_input = (EditText) findViewById(R.id.divPeak2Peak);
@@ -239,4 +219,12 @@ public class MainActivity extends Activity
 		freq_output.setText(freq_output_string);
 	
 	}
+	public void sendMessage(View view) {
+		Intent intent = new Intent(this, VoltageActivity.class);
+		//EditText editText = (EditText) findViewById(R.id.edit_message);
+		//String message = editText.getText().toString();
+		//intent.putExtra(EXTRA_MESSAGE, message);
+		startActivity(intent);
+	}
+	
 }

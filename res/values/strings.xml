@@ -27,5 +27,8 @@
 	    <item>Frequency Calculator</item>
 	    <item>Voltage Calculator</item>
 	</string-array>
-	
+	<string-array name="freq_app_functions">
+		<item>Voltage Calculator"</item>
+		<item>Frequency Calculator</item>
+	</string-array>
 </resources>
