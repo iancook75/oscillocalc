@@ -169,7 +169,6 @@ public class MainActivity extends Activity
 		}
 		float time_input_val = Float.parseFloat( time_input_string );
 		
-	//	int freq_output_val = 
 		float freq_output_val = ( 1 / ( (div_val * time_input_val) / time_input_scale)) / freq_output_scale;
 		
 		String freq_output_string = Float.toString(freq_output_val);
