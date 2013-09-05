@@ -18,13 +18,9 @@
 			android:id="@+id/freq_divlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:text="@string/divisionsString"
-=======
             android:maxLines="2"
             android:maxWidth="30dp"
-            android:text="@string/divp2pString"
->>>>>>> 8adc75edf5efd9fda1a336f5ae87ca6062833b55
             android:textSize="12sp" 
 			
 			/>
@@ -43,7 +39,6 @@
 		
 		
 	</TableRow>
-<<<<<<< HEAD
 	<TableRow
         android:id="@+id/volt_tableRow2"
         android:layout_width="wrap_content"
@@ -105,7 +100,5 @@
             android:layout_height="wrap_content" />
 
     </TableRow>
-=======
->>>>>>> 8adc75edf5efd9fda1a336f5ae87ca6062833b55
-	
+
 </TableLayout>

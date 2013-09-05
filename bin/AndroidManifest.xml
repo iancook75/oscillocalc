@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+		<activity
+			android:name="com.iansoft.oscillocalc.VoltageActivity"
+			android:label="@string/app_name"
+			android:parentActivityName="com.iansoft.oscillocalc.MainActivity" >
+				<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value="com.iansoft.oscillocalc.MainActivity" />
+				</activity>
     </application>
 
 </manifest>
