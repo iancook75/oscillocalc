@@ -23,6 +23,9 @@
 	<string name="divp2pString">Divisions Peak to Peak:</string>
 	<string name="freqString">Frequency:</string>
 	<string name="timeperdivString">Time Per Division:</string>
+	<string name="voltsperdivString">Volts Per Division:</string>
+	<string name="voltsString">Volts:</string>
+	<string name="divisionsString">Divisions:</string>
 	<string-array name="app_functions">
 	    <item>Frequency Calculator</item>
 	    <item>Voltage Calculator</item>

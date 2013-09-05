@@ -17,14 +17,14 @@ public class MainActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		Button b = (Button) findViewById(R.id.button);
-    	b.setOnClickListener(new OnClickListener() {
-			
-			public void onClick(View p1) {
-				freq_text_changed();
-			}
-			
-		});
+	//	Button b = (Button) findViewById(R.id.button);
+    //	b.setOnClickListener(new OnClickListener() {
+	//		
+	//		public void onClick(View p1) {
+	//			freq_text_changed();
+	//		}
+	//		
+	//	});
 		
 
 		EditText time_val = (EditText) findViewById(R.id.time_value);

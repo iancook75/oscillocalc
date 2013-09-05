@@ -18,9 +18,13 @@
 			android:id="@+id/freq_divlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:text="@string/divisionsString"
+=======
             android:maxLines="2"
             android:maxWidth="30dp"
             android:text="@string/divp2pString"
+>>>>>>> 8adc75edf5efd9fda1a336f5ae87ca6062833b55
             android:textSize="12sp" 
 			
 			/>
@@ -39,5 +43,69 @@
 		
 		
 	</TableRow>
+<<<<<<< HEAD
+	<TableRow
+        android:id="@+id/volt_tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/voltdivlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voltsperdivString"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/volt_value"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_String"
+            android:inputType="numberDecimal" >
+
+            <requestFocus />
+        </EditText>
+
+        <Spinner
+            android:id="@+id/time_spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+	
+
+    <TableRow
+        android:id="@+id/volt_tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/voltlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voltsString"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/volt_val"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/hint_String"
+            android:textColor="#A3A3A3" />
+
+        <Spinner
+            android:id="@+id/volt_spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+=======
+>>>>>>> 8adc75edf5efd9fda1a336f5ae87ca6062833b55
 	
 </TableLayout>
