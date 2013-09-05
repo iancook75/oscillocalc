@@ -1,1 +1,10 @@
-
+/gen
+/bin/classes
+/bin/classes2
+/bin/dexedLibs
+/bin/jardex
+/bin/res
+/bin/*.xml
+/bin/*.dex
+/bin/*.cache
+/bin/*.ap_
