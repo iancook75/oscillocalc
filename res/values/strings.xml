@@ -18,4 +18,10 @@
 	<string-array name="div_units_array">
 		<item>Div</item>
 	</string-array>
+	<string name="hint_String">0</string>
+	<string name="calculateString">Calculate</string>
+	<string name="divp2pString">Divisions Peak to Peak:</string>
+	<string name="freqString">Frequency:</string>
+	<string name="timeperdivString">Time Per Division:</string>
+	
 </resources>
