@@ -57,8 +57,64 @@ public class MainActivity extends Activity
 			
 			}
 		});
+// App Function Spinner Begin		
+		Spinner funct_spinner = (Spinner) findViewById(R.id.func_spinner);
+		funct_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+				Spinner funct_spinner2 = (Spinner) findViewById(R.id.func_spinner);
+				
+				if (funct_spinner2.getSelectedItem().equals("Frequency Calculator")) {
+					//setContentView(R.layout.main);
+				}
+				if (funct_spinner2.getSelectedItem().equals("Voltage Calculator")) {
+					setContentView(R.layout.freqcalc);
+				}
+			}
+			public void onNothingSelected(AdapterView<?> adapterView) {
+
+			}
+		});
+		// Create an ArrayAdapter using the string array and a default spinner layout 
+		ArrayAdapter<CharSequence> funcadapter = ArrayAdapter.createFromResource(
+			this, R.array.app_functions,
+			android.R.layout.simple_spinner_item
+		); 
+		// Specify the layout to use when the list of choices appears
+		funcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		funct_spinner.setAdapter(funcadapter);
+//App Function Spinner End	
+		
+// App Function Spinner Begin		
+				Spinner func_funct_spinner = (Spinner) findViewById(R.id.freq_func_spinner);
+				func_funct_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+					public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+						Spinner funct_spinner2 = (Spinner) findViewById(R.id.func_spinner);
+						
+						if (funct_spinner2.getSelectedItem().equals("Frequency Calculator")) {
+							setContentView(R.layout.main);
+						}
+						if (funct_spinner2.getSelectedItem().equals("Voltage Calculator")) {
+							//setContentView(R.layout.freqcalc);
+						}
+					}
+					public void onNothingSelected(AdapterView<?> adapterView) {
+
+					}
+				});
+				// Create an ArrayAdapter using the string array and a default spinner layout 
+				ArrayAdapter<CharSequence> func_funcadapter = ArrayAdapter.createFromResource(
+					this, R.array.app_functions,
+					android.R.layout.simple_spinner_item
+				); 
+				// Specify the layout to use when the list of choices appears
+				func_funcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				// Apply the adapter to the spinner
+				func_funct_spinner.setAdapter(funcadapter);
+//App Function Spinner End	
 		
 		
+//Div Spinner Start		
 		Spinner div_spinner = (Spinner) findViewById(R.id.divspinner); 
 	
 		// Create an ArrayAdapter using the string array and a default spinner layout 
@@ -70,7 +126,9 @@ public class MainActivity extends Activity
 		divadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		div_spinner.setAdapter(divadapter);
+//Div Spinner End
 		
+//Freq Spinner Start		
 		Spinner spinner2 = (Spinner) findViewById(R.id.freq_spinner2); 
 		spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -90,7 +148,10 @@ public class MainActivity extends Activity
 		adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner2.setAdapter(adapter2);
+//Freq Spinner End
 		
+		
+//Time Spinner Start
 		Spinner time_spinner = (Spinner) findViewById(R.id.time_spinner); 
 		time_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -110,6 +171,8 @@ public class MainActivity extends Activity
 		time_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		time_spinner.setAdapter(time_adapter);
+		
+//Time Spinner End
 	}
 	
 	
