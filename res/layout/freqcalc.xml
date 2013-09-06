@@ -25,7 +25,7 @@
 			
 			/>
 		<EditText
-            android:id="@+id/volt_div"
+            android:id="@+id/volt_div_val"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:ems="10"

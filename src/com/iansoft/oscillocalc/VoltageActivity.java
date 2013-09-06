@@ -18,7 +18,7 @@ import android.content.Intent;
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.freqcalc);
 			
-			EditText divpervolt_val = (EditText) findViewById(R.id.volt_div);
+			EditText divpervolt_val = (EditText) findViewById(R.id.volt_div_val);
 			divpervolt_val.addTextChangedListener(new TextWatcher() {
 
 					public void afterTextChanged(Editable s1) {
@@ -148,7 +148,7 @@ import android.content.Intent;
 			Spinner volt_out_spinner = (Spinner) findViewById(R.id.out_volt_spinner);
 			EditText volt_output = (EditText) findViewById(R.id.volt_val);
 			EditText div_input = (EditText) findViewById(R.id.volt_value);
-			EditText volt_per_div_input = (EditText) findViewById(R.id.volt_div);
+			EditText volt_per_div_input = (EditText) findViewById(R.id.volt_div_val);
 			
 			float volt_output_scale = 0;
 			float volt_input_scale = 0;
