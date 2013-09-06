@@ -207,7 +207,7 @@ public class MainActivity extends Activity
 		if (time_input_string.equals("")) {
 			return;
 		}
-		if (time_input_string.equals("")) {
+		if (time_input_string.equals("0")) {
 			return;
 		}
 		float time_input_val = Float.parseFloat( time_input_string );

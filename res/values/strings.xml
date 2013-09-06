@@ -34,4 +34,10 @@
 		<item>Voltage Calculator"</item>
 		<item>Frequency Calculator</item>
 	</string-array>
+	<string-array name="voltUnits">
+	    <item>V</item>
+	    <item>mV</item>
+	    <item>uV</item>
+	    <item>nV</item>
+	</string-array>
 </resources>
