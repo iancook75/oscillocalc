@@ -199,7 +199,7 @@ import android.content.Intent;
 			}
 			float volt_input_val = Float.parseFloat( volt_input_string );
 			
-			float volt_output_val = (((div_val * volt_input_val) / volt_input_scale) / volt_output_scale);
+			float volt_output_val = (((div_val * volt_input_val) / volt_input_scale) * volt_output_scale);
 			
 			String volt_output_string = Float.toString(volt_output_val);
 			
