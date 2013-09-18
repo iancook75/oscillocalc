@@ -17,16 +17,8 @@ public class MainActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-	//	Button b = (Button) findViewById(R.id.button);
-    //	b.setOnClickListener(new OnClickListener() {
-	//		
-	//		public void onClick(View p1) {
-	//			freq_text_changed();
-	//		}
-	//		
-	//	});
 		
-
+		//Start Time Per Division EditText
 		EditText time_val = (EditText) findViewById(R.id.time_value);
 		time_val.addTextChangedListener(new TextWatcher() {
 
@@ -41,9 +33,11 @@ public class MainActivity extends Activity
 				public void beforeTextChanged(CharSequence s, int start, int count, int after){
 
 				}
-			});
+			}
+		);
+		//End Time Per Division EditText
 		
-		
+		//Start Divisions EditText
 		EditText p2p_val = (EditText) findViewById(R.id.divPeak2Peak);
 		p2p_val.addTextChangedListener(new TextWatcher() {
 			
@@ -59,6 +53,7 @@ public class MainActivity extends Activity
 			
 			}
 		});
+	
 // App Function Spinner Begin		
 		Spinner funct_spinner = (Spinner) findViewById(R.id.func_spinner);
 		funct_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -169,12 +164,15 @@ public class MainActivity extends Activity
 		if (freq_spinner2.getSelectedItem().toString().equals("Hz")) {
 			freq_output_scale = 1;	
 		}
+		
 		if (freq_spinner2.getSelectedItem().toString().equals("kHz")) {
 			freq_output_scale = 1000f;	
 		}
+		
 		if (freq_spinner2.getSelectedItem().toString().equals("MHz")) {
 			freq_output_scale = 1000000f;	
 		}
+		
 		if (freq_spinner2.getSelectedItem().toString().equals("GHz")) {
 			freq_output_scale = 1000000000f;	
 		}
@@ -182,12 +180,15 @@ public class MainActivity extends Activity
 		if ( time_spinner.getSelectedItem().toString().equals("S")) {
 			time_input_scale = 1;
 		}
+		
 		if ( time_spinner.getSelectedItem().toString().equals("mS")) {
 			time_input_scale = 1000f;
 		}
+		
 		if ( time_spinner.getSelectedItem().toString().equals("uS")) {
 			time_input_scale = 1000000f;
 		}
+		
 		if ( time_spinner.getSelectedItem().toString().equals("nS")) {
 			time_input_scale = 1000000000f;
 		}
@@ -200,16 +201,18 @@ public class MainActivity extends Activity
 		if (div_val_string.equals("0")) {
 			return;
 		}
-		float div_val = Float.parseFloat( div_val_string );
 		
+		float div_val = Float.parseFloat( div_val_string );
 		
 		String time_input_string = time_per_div_input.getText().toString();
 		if (time_input_string.equals("")) {
 			return;
 		}
+		
 		if (time_input_string.equals("0")) {
 			return;
 		}
+		
 		float time_input_val = Float.parseFloat( time_input_string );
 		
 		float freq_output_val = ( 1 / ( (div_val * time_input_val) / time_input_scale)) / freq_output_scale;
@@ -219,11 +222,9 @@ public class MainActivity extends Activity
 		freq_output.setText(freq_output_string);
 	
 	}
+	
 	public void sendMessage(View view) {
 		Intent intent = new Intent(this, VoltageActivity.class);
-		//EditText editText = (EditText) findViewById(R.id.edit_message);
-		//String message = editText.getText().toString();
-		//intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
 	

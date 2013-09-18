@@ -40,4 +40,11 @@
 	    <item>uV</item>
 	    <item>nV</item>
 	</string-array>
+	<string name="probeString">Probe Attenuation:</string>
+	<string-array name="probeUnits">
+		<item>1x</item>
+		<item>10x</item>
+		<item>100x</item>
+		<item>Custom</item>
+	</string-array>
 </resources>
