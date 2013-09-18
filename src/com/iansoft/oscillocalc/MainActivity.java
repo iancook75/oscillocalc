@@ -3,7 +3,6 @@ package com.iansoft.oscillocalc;
 import android.app.*;
 import android.os.*;
 import android.view.*;
-import android.view.View;
 import android.widget.*;
 import android.view.View.*;
 import android.text.*;
@@ -53,8 +52,9 @@ public class MainActivity extends Activity
 			
 			}
 		});
+		//End Divisions EditText
 	
-// App Function Spinner Begin		
+		//Start App Function Spinner	
 		Spinner funct_spinner = (Spinner) findViewById(R.id.func_spinner);
 		funct_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -86,9 +86,9 @@ public class MainActivity extends Activity
 		funcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		funct_spinner.setAdapter(funcadapter);
-//App Function Spinner End	
+		//End App Function Spinner
 	
-//Div Spinner Start		
+		//Start Div Spinner
 		Spinner div_spinner = (Spinner) findViewById(R.id.divspinner); 
 	
 		// Create an ArrayAdapter using the string array and a default spinner layout 
@@ -100,9 +100,9 @@ public class MainActivity extends Activity
 		divadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		div_spinner.setAdapter(divadapter);
-//Div Spinner End
+		//End Div Spinner
 		
-//Freq Spinner Start		
+		//Start Freq Spinner
 		Spinner spinner2 = (Spinner) findViewById(R.id.freq_spinner2); 
 		spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -122,10 +122,10 @@ public class MainActivity extends Activity
 		adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner2.setAdapter(adapter2);
-//Freq Spinner End
+		//End Freq Spinner
 		
 		
-//Time Spinner Start
+		//Start Time Spinner
 		Spinner time_spinner = (Spinner) findViewById(R.id.time_spinner); 
 		time_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -146,11 +146,27 @@ public class MainActivity extends Activity
 		// Apply the adapter to the spinner
 		time_spinner.setAdapter(time_adapter);
 		
-//Time Spinner End
+		//End Time Spinner End
 	}
 	
 	
-
+	//Display Error when bad input detected
+	public void blankError() {
+		EditText volt_output = (EditText) findViewById(R.id.freq_val);
+		volt_output.setHint("Input Error");
+	}
+	
+	//Check Number
+	public boolean isNumber(String str) { 
+		try { 
+			Float.parseFloat(str);
+			return true;
+			}
+		catch (NumberFormatException nfe) {
+			return false;
+		} 
+	}
+	
 	public void freq_text_changed() {
 		EditText freq_output = (EditText) findViewById(R.id.freq_val);
 		EditText div_input = (EditText) findViewById(R.id.divPeak2Peak);
@@ -160,6 +176,17 @@ public class MainActivity extends Activity
 		
 		float freq_output_scale = 0;
 		float time_input_scale = 0;
+		
+		String div_val_string = div_input.getText().toString();
+		if (!isNumber(div_val_string)) {
+			blankError();
+			return;
+		}
+		String time_input_string = time_per_div_input.getText().toString();
+		if (!isNumber(time_input_string)) {
+			blankError();
+			return;
+		}
 		
 		if (freq_spinner2.getSelectedItem().toString().equals("Hz")) {
 			freq_output_scale = 1;	
@@ -193,25 +220,7 @@ public class MainActivity extends Activity
 			time_input_scale = 1000000000f;
 		}
 		
-		String div_val_string = div_input.getText().toString();
-		if (div_val_string.equals("")) {
-			return;
-		}
-		
-		if (div_val_string.equals("0")) {
-			return;
-		}
-		
 		float div_val = Float.parseFloat( div_val_string );
-		
-		String time_input_string = time_per_div_input.getText().toString();
-		if (time_input_string.equals("")) {
-			return;
-		}
-		
-		if (time_input_string.equals("0")) {
-			return;
-		}
 		
 		float time_input_val = Float.parseFloat( time_input_string );
 		
@@ -219,7 +228,7 @@ public class MainActivity extends Activity
 		
 		String freq_output_string = Float.toString(freq_output_val);
 		
-		freq_output.setText(freq_output_string);
+		freq_output.setHint(freq_output_string);
 	
 	}
 	
